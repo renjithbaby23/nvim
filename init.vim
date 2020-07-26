@@ -147,16 +147,12 @@ function MyCustomHighlights()
 endfunction
 
 autocmd FileType python call MyCustomHighlights()
-
 autocmd ColorScheme * call MyCustomHighlights()
 
 
 "black
 nnoremap <F9> :Black<CR>
 autocmd BufWritePost *.py silent! execute ':Black'
-
-
-
 
 "cursor
 set mouse=a
@@ -168,13 +164,27 @@ let g:ale_linters = {'python': ['flake8']}
 let g:pydocstring_formatter = 'google'
 nnoremap <F4> :Pydocstring<CR>
 
+" custom key bindings
+" Ctrl + up/down arrow to move the current line up or down
+nnoremap <C-Down> :m .+1<CR>
+nnoremap <C-Up> :m .-2<CR>
+" Ctrl + left/right to go to next or previous tab
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
+
+" for copying and pasting to and from outside the editor
+noremap <Leader>y "*y
+noremap <Leader>p "*p
+noremap <Leader>Y "+y
+noremap <Leader>P "+p
+
+"set runtimepath^=~/.vim runtimepath+=~/.vim/after
+let &packpath = &runtimepath
+source ~/.vimrc
+
 "PRE Requeirements.
 "Install in base libraby
 "pip install pynvim --upgrade 
 "pip install flake8
 "pip install black
 "pip instal jedi
-"
-"set runtimepath^=~/.vim runtimepath+=~/.vim/after
-let &packpath = &runtimepath
-source ~/.vimrc
