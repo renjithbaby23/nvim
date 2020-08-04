@@ -154,6 +154,9 @@ autocmd ColorScheme * call MyCustomHighlights()
 nnoremap <F9> :Black<CR>
 autocmd BufWritePost *.py silent! execute ':Black'
 
+"indent fold
+nnoremap <silent> zZ :set foldmethod=indent<CR>
+
 "cursor
 set mouse=a
 
