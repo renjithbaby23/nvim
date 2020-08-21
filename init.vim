@@ -164,6 +164,8 @@ set mouse=a
 let g:ale_linters = {'python': ['flake8']}
 
 "doctstring
+"change the path to where you have pydocstring ($ which doq)                                                                                                                                           
+let g:pydocstring_doq_path = "/home/cgiuser/.local/bin/doq"
 let g:pydocstring_formatter = 'google'
 nnoremap <F4> :Pydocstring<CR>
 
